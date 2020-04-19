@@ -58,7 +58,7 @@ class Simulacao {
 
   _atualizaRNought() {
     var diffSegundos = abs(this.ultimaAtualizacaoInfectados - new Date()) / 1000;
-    var qtdInfectados = this.getQtdInfectados();
+    var qtdInfectados = this.qtdInfectados;
 
     var x = 1;
     // depois de x segundos atualiza R nought
@@ -108,7 +108,7 @@ class Simulacao {
 
       for (var pSuscetivel of suscetiveis) {
         // % de chance de infectar
-        if (random() > PROBALIDADE_INFECCAO * pSuscetivel.estado.getProbabilidadeProtecao()) {
+        if (random() > PROBALIDADE_INFECCAO * pSuscetivel.estado.propabilidadeProtecao) {
           continue;
         }
         if (!pSuscetivel.distanciaSocialMantida(pInfecciosa)) {
@@ -119,7 +119,7 @@ class Simulacao {
     };
   }
 
-  getQtdInfectados() {
+  get qtdInfectados() {
     return this.populacao
       .filter(p => p.estado instanceof PessoaInfecciosa)
       .length;
