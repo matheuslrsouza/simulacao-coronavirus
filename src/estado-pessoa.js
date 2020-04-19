@@ -14,7 +14,7 @@ class PessoaSuscetivel {
     pop();
   }
 
-  getProbabilidadeProtecao() {
+  get probabilidadeProtecao() {
     return 1;
   }
 
@@ -88,7 +88,7 @@ class PessoaInfecciosa {
     }
   }
 
-  getProbabilidadeProtecao() {
+  get probabilidadeProtecao() {
     return 1;
   }
 }
@@ -108,7 +108,7 @@ class PessoaRecuperada {
     pop();
   }
 
-  getProbabilidadeProtecao() {
+  get probabilidadeProtecao() {
     return 1;
   }
 
@@ -129,7 +129,7 @@ class PessoaSuscetivelComMascara {
     pop();
   }
 
-  getProbabilidadeProtecao() {
+  get probabilidadeProtecao() {
     return PROBALIDADE_INFECCAO_MASCARA;
   }
 

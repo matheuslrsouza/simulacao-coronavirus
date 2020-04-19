@@ -11,7 +11,7 @@ function draw() {
     background(0);
     simulacao.executa();
 
-    var infectados = simulacao.getQtdInfectados();
+    var infectados = simulacao.qtdInfectados;
     if (infectados != 0) {
         grafico.addValor(infectados);
     }
