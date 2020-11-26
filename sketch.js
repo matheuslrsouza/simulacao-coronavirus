@@ -1,14 +1,26 @@
 var simulacao;
 var grafico;
 
+const sizeConfig = {
+    width: 1260, 
+    height: 500,
+    vw: 1600, 
+    vh: 900
+};
+
 function setup() {
-    createCanvas(1260, 500);
+    createCanvas(sizeConfig.vw, sizeConfig.vh);
     simulacao = new Simulacao();
     grafico = new Grafico();
 }
 
 function draw() {
     background(0);
+
+    translate(
+        (sizeConfig.vw - sizeConfig.width) / 2, 
+        (sizeConfig.vh - sizeConfig.height) / 2);
+
     simulacao.executa();
 
     var infectados = simulacao.qtdInfectados;

@@ -1,3 +1,6 @@
+const qs = window.location.search;
+let params = new URLSearchParams(qs);
+
 const TAM_POPULACAO = 350;
 const CAPACIDADE_SISTEMA_SAUDE = .0;
 
@@ -21,9 +24,9 @@ const TAMANHO_PESSOA = 5;
 
 const RAIO_ALCANCE = TAMANHO_PESSOA * 4;
 
-const HABILITA_ISOLAMENTO = true;
+const HABILITA_ISOLAMENTO = params.get("isolamento") === 'true';
+const HABILITA_DISTANCIAMENTO = params.get("distanciamento") === 'true';
 const HABILITA_VACINA = false;
-const HABILITA_DISTANCIAMENTO = true;
 const FATOR_DISTANCIAMENTO = TAMANHO_PESSOA * 4 + 2;
 const PERCENTUAL_PARTICIPANDO_DISTANCIAMENTO_SOCIAL = .6;
 
